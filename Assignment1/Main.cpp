@@ -30,14 +30,14 @@
 #include <iostream>
 #include <string>
 
+#include "GameStructure.h"
+
 int main()
 {
-	bool isRunning = true;
+	GameStructure game;
 
-	while (isRunning)
-	{
-		// TODO: Implement game loop functionality
-	}
+	// Start the game
+	game.Start();
 
 	return 0;
 }
