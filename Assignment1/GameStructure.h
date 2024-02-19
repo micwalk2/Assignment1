@@ -2,11 +2,11 @@
 
 class GameStructure
 {
+public:
+	GameStructure() {}
+
+	void startGame();
+
 private:
 	bool isRunning = true;
-
-public:
-	GameStructure(){}
-
-	void Start();
 };

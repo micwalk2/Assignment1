@@ -34,10 +34,11 @@
 
 int main()
 {
+	// Create a game object
 	GameStructure game;
 
 	// Start the game
-	game.Start();
+	game.startGame();
 
 	return 0;
 }
