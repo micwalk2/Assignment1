@@ -6,8 +6,26 @@
 
 Pirate::Pirate(std::string name, int current, int max, int rum, int threshold) : Combatant(name, current, max)
 {
-	rumAmount = rum;
-	drinkThreshold = threshold;
+	// Set the rum amount and drink threshold
+	if (rum <= 2 && rum >= 0)
+	{
+		rumAmount = rum;
+	}
+	else
+	{
+		std::cout << "Rum amount must be between 0-2. Setting to 0." << std::endl;
+		rumAmount = 0;
+	}
+
+	if (threshold >= (rumAmount + 2))
+	{
+		drinkThreshold = threshold;
+	}
+	else
+	{
+		drinkThreshold = rumAmount + 2;
+		std::cout << "Drink threshold must be 2 greater than rum amount. Setting to " << drinkThreshold << std::endl;
+	}
 }
 
 void Pirate::Display()
@@ -17,18 +35,24 @@ void Pirate::Display()
 	std::cout << "Rum: " << rumAmount << std::endl;
 }
 
-void Pirate::Update()
+void Pirate::Display(bool drunk)
 {
-	// Check if the pirate is drunk
-	if (rumAmount >= drinkThreshold)
+	// Call the base class Display method and display drunk status
+	Combatant::Display();
+	if (drunk)
 	{
-		isDrunk = true;
-		std::cout << "You're drunk!" << std::endl;
+		std::cout << "Drunk: " << isDrunk << std::endl;
 	}
 	else
 	{
-		isDrunk = false;
+		std::cout << "Drunk: " << isDrunk << std::endl;
 	}
+	
+}
+
+void Pirate::Update()
+{
+	std::cout << "*---------------------------------------*\n";
 }
 
 void Pirate::Drink()

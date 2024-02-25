@@ -11,7 +11,7 @@ public:
 
 	void Display();
 	void Update();
-	void throwSmoke();
+	void reduceSmoke();
 
 private:
 	int smokeAmount, damageReduction;

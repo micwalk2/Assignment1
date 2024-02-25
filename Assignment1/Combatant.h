@@ -12,7 +12,7 @@ protected:
 	std::string combatantName;
 	int currentHealth, maxHealth;
 
-	void Display();
+	virtual void Display();
 	void Attack();
 	int takeDamage(int amount);
 };

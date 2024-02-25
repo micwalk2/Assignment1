@@ -34,14 +34,15 @@ void GameStructure::startGame()
 			pirate.Update();
 			pirate.Drink();
 			pirate.Update();
-			pirate.Display();
+			bool drunkStatus = pirate.getDrunkStatus();
+			pirate.Display(drunkStatus);
 		}
 		else if (choice == 2)
 		{
 			Ninja ninja("Ninja", 100, 100, 3, 2);
 			ninja.Display();
 			ninja.Update();
-			ninja.throwSmoke();
+			ninja.reduceSmoke();
 			ninja.Update();
 			ninja.Display();
 		}

@@ -8,8 +8,11 @@ public:
 	Pirate(std::string name, int current, int max, int rum, int threshold);
 
 	void Display();
+	void Display(bool drunk);
 	void Update();
 	void Drink();
+
+	bool getDrunkStatus() { return isDrunk; }
 
 private:
 	int rumAmount, drinkThreshold;

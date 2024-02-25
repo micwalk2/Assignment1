@@ -6,7 +6,17 @@
 
 Ninja::Ninja(std::string name, int current, int max, int smoke, int reduction) : Combatant(name, current, max)
 {
-	smokeAmount = smoke;
+	// Set the smoke amount and damage reduction
+	if (smoke > 0)
+	{
+		smokeAmount = smoke;
+	}
+	else
+	{
+		std::cout << "Smoke amount must be greater than 0. Setting to 1." << std::endl;
+		smokeAmount = 1;
+	}
+	
 	damageReduction = reduction;
 }
 
@@ -20,6 +30,7 @@ void Ninja::Display()
 // Determine whether smoke amount is greater than 0 and therefore the ninja is hidden
 void Ninja::Update()
 {
+	std::cout << "*---------------------------------------*\n";
 	if (smokeAmount > 0)
 	{
 		isHidden = true;
@@ -33,7 +44,7 @@ void Ninja::Update()
 }
 
 // Decrement smoke amount and display a message
-void Ninja::throwSmoke()
+void Ninja::reduceSmoke()
 {
 	smokeAmount--;
 	std::cout << "Your smoke starts to dissipate!" << std::endl;
